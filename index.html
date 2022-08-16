@@ -26,6 +26,61 @@
           >
         </div>
       </nav>
+      <main>
+        <div
+          class="d-flex align-items-center justify-content-evenly m-auto gap-5 flex-column flex-md-row p-5"
+        >
+          <div class="d-flex justify-content-center">
+            <img
+              src="./image/qr-code.png"
+              alt="qr-code"
+              class="w-50 m-auto mt-5"
+            />
+          </div>
+          <div>
+            <h1 class="fw-bold mt-5">QR Code Generator</h1>
+            <p class="mb-4">
+              QR Codes allow smartphone users to access your website simply and
+              quickly
+            </p>
+            <p>
+              Enter your URL below to generate a QR Code and download the image.
+            </p>
+            <form id="generate-form" class="mt-4 d-flex flex-column gap-4">
+              <input
+                type="url"
+                class="p-2"
+                id="url"
+                placeholder="Enter a URL"
+              />
+              <select id="size" class="p-2">
+                <option value="100">100X100</option>
+                <option value="200">200X200</option>
+                <option value="300">300X300</option>
+                <option value="400">400X400</option>
+                <option value="500">500X500</option>
+                <option value="600">600X600</option>
+                <option value="700">700X700</option>
+              </select>
+              <button class="btn btn-success">Generate QR Code</button>
+            </form>
+          </div>
+
+          <!-- generated qr code -->
+          <div>
+            <!-- spinner -->
+            <div id="spinner" class="m-auto">
+              <img
+                src="./image/spinner-icon-gif-10.jpg"
+                alt=""
+                style="width: 50vw; border-radius: 5rem; display: none"
+              />
+            </div>
+            <!-- qr code output -->
+            <div id="qrcode" class="m-auto"></div>
+          </div>
+        </div>
+      </main>
     </div>
     <script src="qrCode.js"></script>
   </body>
