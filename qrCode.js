@@ -3,6 +3,7 @@ const qr = document.getElementById("qrcode");
 
 const onGenerateSubmit = (e) => {
   e.preventDefault();
+  clearUI();
   const url = document.getElementById("url").value;
   const size = document.getElementById("size").value;
 
@@ -10,6 +11,7 @@ const onGenerateSubmit = (e) => {
   showSpinner();
   setTimeout(() => {
     hideSpinner();
+    generateQRCode(url, size);
   }, 1000);
 };
 
@@ -21,3 +23,14 @@ const hideSpinner = () => {
 };
 hideSpinner();
 form.addEventListener("submit", onGenerateSubmit);
+
+const generateQRCode = (url, size) => {
+  const qrcode = new QRCode("qrcode", {
+    text: url,
+    width: size,
+    height: size,
+  });
+};
+const clearUI = () => {
+  qr.innerHTML = ""; // to make sure empty div for different sizes
+};
