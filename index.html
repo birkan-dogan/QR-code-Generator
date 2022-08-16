@@ -52,17 +52,20 @@
                 class="p-2"
                 id="url"
                 placeholder="Enter a URL"
+                required
               />
               <select id="size" class="p-2">
                 <option value="100">100X100</option>
                 <option value="200">200X200</option>
-                <option value="300">300X300</option>
+                <option value="300" selected>300X300</option>
                 <option value="400">400X400</option>
                 <option value="500">500X500</option>
                 <option value="600">600X600</option>
                 <option value="700">700X700</option>
               </select>
-              <button class="btn btn-success">Generate QR Code</button>
+              <button class="btn btn-success" type="submit">
+                Generate QR Code
+              </button>
             </form>
           </div>
 
@@ -72,8 +75,9 @@
             <div id="spinner" class="m-auto">
               <img
                 src="./image/spinner-icon-gif-10.jpg"
-                alt=""
-                style="width: 50vw; border-radius: 5rem; display: none"
+                alt="spinner"
+                class="spinner"
+                style="width: 50vw; border-radius: 5rem"
               />
             </div>
             <!-- qr code output -->
