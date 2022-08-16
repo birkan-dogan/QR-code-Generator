@@ -32,7 +32,9 @@
           >
         </div>
       </nav>
-      <main>
+      <main
+        class="d-flex align-items-center justify-content-center m-auto gap-5 flex-column"
+      >
         <div
           class="d-flex align-items-center justify-content-evenly m-auto gap-5 flex-column flex-md-row p-5"
         >
@@ -74,21 +76,20 @@
               </button>
             </form>
           </div>
-
-          <!-- generated qr code -->
-          <div>
-            <!-- spinner -->
-            <div id="spinner" class="m-auto">
-              <img
-                src="./image/spinner-icon-gif-10.jpg"
-                alt="spinner"
-                class="spinner"
-                style="width: 50vw; border-radius: 5rem"
-              />
-            </div>
-            <!-- qr code output -->
-            <div id="qrcode" class="m-auto"></div>
+        </div>
+        <!-- generated qr code -->
+        <div id="generated" class="text-center">
+          <!-- spinner -->
+          <div id="spinner" class="m-auto">
+            <img
+              src="./image/spinner-icon-gif-10.jpg"
+              alt="spinner"
+              class="spinner"
+              style="width: 25vw; border-radius: 5rem"
+            />
           </div>
+          <!-- qr code output -->
+          <div id="qrcode" class="m-auto text-center m-5"></div>
         </div>
       </main>
     </div>

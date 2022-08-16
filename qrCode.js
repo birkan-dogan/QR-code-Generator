@@ -12,6 +12,10 @@ const onGenerateSubmit = (e) => {
   setTimeout(() => {
     hideSpinner();
     generateQRCode(url, size);
+    setTimeout(() => {
+      const saveUrl = qr.querySelector("img").src;
+      createSaveBtn(saveUrl);
+    }, 50);
   }, 1000);
 };
 
@@ -33,4 +37,18 @@ const generateQRCode = (url, size) => {
 };
 const clearUI = () => {
   qr.innerHTML = ""; // to make sure empty div for different sizes
+  const saveBtn = document.getElementById("save-link");
+  if (saveBtn) {
+    saveBtn.remove();
+  }
+};
+
+const createSaveBtn = (saveUrl) => {
+  const link = document.createElement("a");
+  link.id = "save-link";
+  link.classList = "btn btn-danger fw-bold m-5 ";
+  link.href = saveUrl;
+  link.download = "qrcode";
+  link.innerHTML = "Save Image";
+  document.getElementById("generated").appendChild(link);
 };
